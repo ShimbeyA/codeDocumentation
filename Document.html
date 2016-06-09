@@ -1,0 +1,31 @@
+/* shimbey assie
+* Documment for DB table
+*/
+
+//Creating a table
+use contact //a database that exist already
+
+create table if not exists ContactInfo
+(
+	person_id    int   auto_increment,
+	user_id    int   not null,
+	age        int   not null,
+	first_name  varchar(100)  not null,
+	last_name   varchar(100)  not null,
+	primary key  (person_id)  
+	foreign key  (user_id ) references employee (user_id)
+
+)
+// creating a second table that is used as
+// a foreign key in the first table 
+create table if not exists employee
+(
+user_id   int auto_increment,
+employee_number int  not null,
+employee_status  varchar(250) not null,
+
+primary key (user_id)
+
+)
+//inserting information into the table 
+INSERT INTO (person_id,user_id, age, first_name, last_name)contact VALUES ("", "", "21","Sarah", "Smith");
